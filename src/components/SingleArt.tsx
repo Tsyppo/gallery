@@ -22,6 +22,7 @@ const SingleArt: FC<PostInemsProps> = ({ post, authorName, locationName }) => {
         src={`${baseUrl}${post.imageUrl}`}
         alt={post.name}
         className={styles.artImage}
+        loading="lazy"
       />
       <div className={styles.textOverlay}>
         <div className={styles.leftBar} />

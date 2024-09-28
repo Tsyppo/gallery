@@ -12,11 +12,17 @@ interface PostInemsProps {
 const SingleArt: FC<PostInemsProps> = ({ post, authorName, locationName }) => {
   const { isDarkTheme } = useTheme();
 
+  const baseUrl = 'https://test-front.framework.team';
+
   return (
     <div
       className={`${styles.artContainer}  ${isDarkTheme ? styles.dark : styles.light}`}
     >
-      <img src={post.imageUrl} alt={post.name} className={styles.artImage} />
+      <img
+        src={`${baseUrl}${post.imageUrl}`}
+        alt={post.name}
+        className={styles.artImage}
+      />
       <div className={styles.textOverlay}>
         <div className={styles.leftBar} />
         <div className={styles.artDetails}>

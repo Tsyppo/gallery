@@ -1,0 +1,129 @@
+@use './colors.scss' as *;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  top: 0;
+
+  &.light {
+    background-color: $primary-white;
+
+    .logo {
+      fill: $primary-black;
+    }
+
+    .themeButton {
+      background-image: url(../assets/icons/dark.svg);
+      border-color: $secondary-white;
+      background-color: $secondary-white;
+      &:hover {
+        background-color: #eeeeee;
+      }
+    }
+  }
+
+  &.dark {
+    background-color: $primary-black;
+
+    .logo {
+      fill: $primary-white;
+    }
+
+    .themeButton {
+      background-image: url(../assets/icons/light.svg);
+      border-color: $secondary-black;
+      background-color: $secondary-black;
+      &:hover {
+        background-color: #1f1c1c;
+      }
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+
+  .logo {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 90px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .themeButton {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+@media (max-width: 767px) {
+  .header .logo {
+    margin-left: 20px;
+  }
+
+  .header .themeButton {
+    margin-right: 20px;
+  }
+  .header {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header .logo {
+    margin-left: 20px;
+  }
+
+  .header .themeButton {
+    margin-right: 20px;
+  }
+  .header {
+    max-width: 780px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .header .logo {
+    margin-left: 100px;
+  }
+
+  .header .themeButton {
+    margin-right: 100px;
+  }
+  .header {
+    max-width: 1000px;
+  }
+}

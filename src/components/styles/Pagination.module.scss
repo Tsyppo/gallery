@@ -1,0 +1,99 @@
+@use './colors.scss' as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 50px;
+
+  &.light {
+    .pageArrow {
+      &:hover {
+        background-color: #eeeeee;
+      }
+    }
+
+    .pageNumber {
+      color: $primary-black;
+
+      &.active {
+        background-color: #eeeeee;
+      }
+
+      &:hover {
+        color: $secondary-black;
+        &::after {
+          background-color: $secondary-gray;
+        }
+      }
+    }
+    .dots {
+      color: $primary-black;
+    }
+  }
+  &.dark {
+    .pageArrow {
+      &:hover {
+        background-color: $secondary-black;
+      }
+    }
+
+    .pageNumber {
+      color: $primary-white;
+
+      &.active {
+        background-color: $secondary-black;
+      }
+
+      &:hover {
+        color: $secondary-white;
+        &::after {
+          background-color: $primary-dark-gray;
+        }
+      }
+    }
+    .dots {
+      color: $primary-white;
+    }
+  }
+
+  .pageArrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url('../assets/icons/pagination.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    &.left {
+      transform: scaleX(-1);
+    }
+  }
+
+  .pageNumber {
+    position: relative;
+    margin: 0 5px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 0.1px;
+        transition: background-color 0.3s;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .dots {
+    font-size: 16px;
+  }
+}

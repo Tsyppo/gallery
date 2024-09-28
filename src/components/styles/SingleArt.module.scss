@@ -106,7 +106,7 @@
 
   @media (max-width: 767px) {
     width: 195px;
-    height: 5px;
+    height: 15px;
   }
 }
 
@@ -149,6 +149,10 @@
     transform 0.4s ease,
     opacity 0.4s ease;
   transform: translateX(-300px);
+}
+
+.authorName {
+  margin-bottom: 20px;
 }
 
 .artYear,
